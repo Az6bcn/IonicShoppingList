@@ -6,13 +6,42 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>AddShoppingItem</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Add Item</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<ion-item>
+  <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="item.name" placeholder="Enter Item Name"></ion-input>
+</ion-item>
 
+<ion-item>
+    <ion-label>Quantity</ion-label>
+      <ion-input [(ngModel)]="item.quantity" type="number" placeholder="Enter Quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Price</ion-label>
+        <ion-input [(ngModel)]="item.price"s type="number" placeholder="Enter Price"></ion-input>
+    </ion-item>
+
+    <button ion-button block clear (click)="addItem(item)">Add</button> 
+
+    {{ item | json }}
 </ion-content>
+
+
+
+
+
+/*
+An item can contain text, images, and anything else. Generally it is placed in a list with other items. 
+It can easily be swiped, deleted, reordered, edited, and more. 
+
+The Content component provides an easy to use content area with some useful methods to control the scrollable area.
+ There should only be one content in a single view component.
+*/

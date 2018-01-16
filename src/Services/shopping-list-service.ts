@@ -20,6 +20,10 @@ getShoppingList(){
 addItem(item: Item){
     // we push the item to the db
     return this.shoppingListRef.push(item);
+}
 
+editItem(item: Item){
+    //update item selected base on the key
+    return this.shoppingListRef.update(item.key, item); 
 }
 }

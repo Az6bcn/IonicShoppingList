@@ -13,6 +13,7 @@ import { AddShoppingItemPage } from '../pages/add-shopping-item/add-shopping-ite
 import { AddItemReactiveFormPage } from '../pages/add-item-reactive-form/add-item-reactive-form';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListService } from '../Services/shopping-list-service';
+import { EditShoppingPage } from '../pages/edit-shopping/edit-shopping';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ShoppingListService } from '../Services/shopping-list-service';
     MyApp,
     // HomePage ## commented bcos not needed as we lazy loading it
     AddShoppingItemPage,
-    AddItemReactiveFormPage
+    AddItemReactiveFormPage,
+    EditShoppingPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ShoppingListService } from '../Services/shopping-list-service';
     MyApp,
     // HomePage
     AddShoppingItemPage,
-    AddItemReactiveFormPage
+    AddItemReactiveFormPage,
+    EditShoppingPage
   ],
   providers: [
     StatusBar,

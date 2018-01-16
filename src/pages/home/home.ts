@@ -5,6 +5,7 @@ import { AddItemReactiveFormPage } from '../add-item-reactive-form/add-item-reac
 import { ShoppingListService } from '../../Services/shopping-list-service';
 import { Observable } from 'rxjs/Observable';
 import { Item } from '../../Model/item';
+import { EditShoppingPage } from '../edit-shopping/edit-shopping';
 
 @IonicPage() // adding this on top of all components we can lazy load them inside app.component.ts
 @Component({
@@ -44,4 +45,6 @@ ngOnInit(){
   private goToAddShoppingItemReativeFormPage(){
     this.navCtrl.push(AddItemReactiveFormPage);
   }
+
+ 
 }

@@ -37,9 +37,20 @@ export class EditShoppingPage {
   saveItem(itemToEdit: Item){
       this.shoppingListService.editItem(itemToEdit)
           .then(() => { // when completed : show toast and navigate back to the hompepage
-            this.toastService.show(`${itemToEdit.name} saved!`, 5000);
-              this.navCtrl.setRoot('HomePage');
+            this.toastService.show(`${itemToEdit.name} Saved!`, 5000);
+
+            this.navCtrl.setRoot('HomePage');
           })
+  }
+
+  removeItem(item: Item){
+    this.shoppingListService.removeItem(item)
+    .then(() => {
+        this.toastService.show(`${item.name} Deleted`, 5000 );
+        
+        this.navCtrl.setRoot('HomePage');
+
+    })
   }
 
 }

@@ -23,7 +23,12 @@ addItem(item: Item){
 }
 
 editItem(item: Item){
-    //update item selected base on the key
+    //update item selected base on it's key
     return this.shoppingListRef.update(item.key, item); 
+}
+
+removeItem(item: Item) {
+    // remove the selected item from the DB base on it's key
+    return this.shoppingListRef.remove(item.key);
 }
 }

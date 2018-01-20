@@ -14,22 +14,27 @@ import { AddItemReactiveFormPage } from '../pages/add-item-reactive-form/add-ite
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListService } from '../Services/shopping-list-service';
 import { EditShoppingPage } from '../pages/edit-shopping/edit-shopping';
+import { ToastService } from '../Services/toast.service';
+import { EditShoppingPageModule } from '../pages/edit-shopping/edit-shopping.module';
+import { AddShoppingItemPageModule } from '../pages/add-shopping-item/add-shopping-item.module';
+import { AddItemReactiveFormPageModule } from '../pages/add-item-reactive-form/add-item-reactive-form.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
     // HomePage ## commented bcos not needed as we lazy loading it
-    AddShoppingItemPage,
-    AddItemReactiveFormPage,
-    EditShoppingPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFRIG), // imports firebase/app needed for everything
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // import the created pages modules
+    AddShoppingItemPageModule,
+    AddItemReactiveFormPageModule,
+    EditShoppingPageModule
     
   ],
   bootstrap: [IonicApp],
@@ -44,7 +49,8 @@ import { EditShoppingPage } from '../pages/edit-shopping/edit-shopping';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ShoppingListService // service
+    ShoppingListService, // service
+    ToastService
   ]
 })
 export class AppModule {}
